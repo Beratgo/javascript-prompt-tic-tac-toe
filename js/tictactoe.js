@@ -137,7 +137,7 @@ function playerTurn(){
       // printing out values that are taken; 
       for(let i = 0; i < board.length; i++){
         if(board[i] !== null){
-          console.log(i + ' is taken!\n');
+          console.log(i + ': ' + explainNumberLocationOnBoard(i) + ' is taken!\n');
         }
       }
 
