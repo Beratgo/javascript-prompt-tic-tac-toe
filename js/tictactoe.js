@@ -24,31 +24,31 @@ function explainNumberLocationOnBoard(x){
   switch(chosenNumberOnBoard){
 
     case 1:
-      return "That's TOP LEFT";
+      return "TOP LEFT";
       break;
     case 2:
-      return "That's TOP MIDDLE";
+      return "TOP MIDDLE";
       break;
     case 3:
-      return "That's TOP RIGHT";
+      return "TOP RIGHT";
       break;
     case 4:
-      return "That's MIDDLE LEFT";
+      return "MIDDLE LEFT";
       break;
     case 5:
-      return "That's MIDDLE MIDDLE";
+      return "MIDDLE MIDDLE";
       break;
     case 6:
-      return "That's MIDDLE RIGHT";
+      return "MIDDLE RIGHT";
       break;
     case 7:
-      return "That's BOTTOM LEFT";
+      return "BOTTOM LEFT";
       break;
     case 8:
-      return "That's BOTTOM MIDDLE";
+      return "BOTTOM MIDDLE";
       break;
     case 9:
-      return "That's BOTTOM RIGHT";
+      return "BOTTOM RIGHT";
       break;
     
   };
@@ -145,6 +145,14 @@ function playerTurn(){
     }
   }else{
     alert('Not a valid number between 1-9, trying again!');
+
+      // printing out values that are taken; 
+      for(let i = 0; i < board.length; i++){
+        if(board[i] !== null){
+          console.log(i + ': ' + explainNumberLocationOnBoard(i) + ' is taken!\n');
+        }
+      }
+    
     playerTurn();
   }
 
@@ -183,7 +191,7 @@ function computerTurn(){
       computerTurn();
     }
   }else{
-    alert('Not a valid number between 1-9, trying again!');
+    alert('The robot tried an invalid number between 1-9, there must be a bug in the system?!');
     // starting function again till we get a valid value
     computerTurn();
   }
